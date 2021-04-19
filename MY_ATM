@@ -1,0 +1,303 @@
+#include <iostream>
+#include<cmath>
+
+using namespace std;
+int want;
+char a=1;
+char b=2, c=3,d=4,e=5;
+double amount,balance,receiverAccount,confirmAccount;
+int transfer,withdraw,confirmPin,newPin;
+string email, unique_id,pin,oldPin,mypin;
+const int transaction_lmt=1000; int money=5000;
+
+        //LOG IN DETAILS//
+string login_id="1234",loginPin="0000";
+        //////////////
+int main()
+{
+
+    cout << "---->> WELCOME TO MYLAR ATM <<---"<< endl;
+    //login details
+
+    cout<<"PLEASE LOGIN YOUR DETAILS TO CONTINUE:\n"<<endl;
+    cout<<"ENTER YOUR UNIQUE ID :";
+    cin>>unique_id;
+    cout<<"PLEASE ENTER YOUR PIN :";
+    cin>>pin;
+    //authentication
+    if ((unique_id==login_id) &&( pin ==loginPin)){
+        cout<<"   ^^^^^^^^^ WELCOME ^^^^^^^^^^ "<<endl;
+        cout<<">>>>>>>>>>  "<<unique_id<<"  >>>>>>>>>>"<<endl;
+        cout<<"\n";
+        cout<<"WHAT WOULD YOU LIKE TO DO ?"<<endl;
+        cout<<"1. WITHDRAW"<<endl;
+          cout<<"2. CHECK YOUR BALANCE"<<endl;
+            cout<<"3. CHECK STATEMENT"<<endl;
+              cout<<"4. RESET PIN"<<endl;
+                cout<<"5. TRANSFER FUNDS"<<endl;
+                  cout<<"\n"<<endl;
+              cout<<"*PLEASE SELECT YOUR OPTION BY ENTERING THE NUMBER 1,2,3,4 or 5 "<<endl;
+              cin>>want;
+              cout<<"\n";
+     if(want==1)
+    {
+     cout<<"-----WITHDRAW------\n";
+
+
+       cout<<"HOW MUCH WOULD YOU LIKE TO WITHDRAW :"<<endl;
+       cin>>withdraw;
+        cout<<"loading...";
+          cout<<"...";
+            cout<<"SUCCESSFULLY WITHDRAWN :"<<withdraw<<endl;
+             cout<<"YOUR NEW BALANCE IS GHS:"<<money-withdraw<<endl;
+              cout<<"THANK YOU FOR BANKING WITH US !"<<endl;
+    }
+    else
+        if(want==2)
+    {
+          cout<<"-----BALANCE----"<<endl;
+         cout<<"\n"<<endl;
+          cout<<"YOUR BALANCE IS GHS:"<<money-withdraw<<endl;
+          cout<<"*** THANK YOU FOR BANKING WITH US ! ***"<<endl;
+
+    }
+    else
+        if(want==3)
+    {
+        cout<<"------- CHECK ACCOUNT STATEMENT -------- "<<endl;
+        cout<<"\n"<<endl;
+        cout<<"PLEASE ENTER YOUR EMAIL ACCOUNT ";
+        cin>>email;
+        cout<<"YOUR ACCOUNT STATEMENT HAS BEEN SENT TO YOUR EMAIL."<<endl;
+        cout<<"*** THANK YOU FOR BANKING WITH US ! ***"<<endl;
+
+    }
+    else
+        if(want==4)
+    {
+        cout<<"-------RESET PIN-------"<<endl;
+
+        cout<<"ENTER YOUR OLD PIN:";
+        cin>>oldPin;
+        while(oldPin!=loginPin){
+     cout<<"RETRY AGAIN"<<endl;
+ cin>>oldPin;
+        if(oldPin==loginPin){
+            cout<<"ENTER NEW PIN :";
+            cin>>newPin;
+        cout<<"CONFIRM NEW PIN :";
+        cin>>confirmPin;
+        if(newPin == confirmPin){
+
+            cout<<"PIN RESET SUCCESSFUL...!"<<endl;
+            cout<<"***  UPDATING YOUR SECURITY  ! ***"<<endl;
+            cout<<"*** THANK YOU FOR  BANKING WITH US ! ***"<<endl;
+        }
+        else
+        {
+            cout<<"PIN DONT MATCH"<<endl;
+            cout<<"TRY AGIN"<<endl;
+             cout<<"ENTER NEW PIN :";
+            cin>>newPin;
+        cout<<"CONFIRM NEW PIN :";
+        cin>>confirmPin;
+        if(newPin == confirmPin){
+            cout<<"PIN RESET SUCCESSFUL...!"<<endl;
+            cout<<"*** THANK YOU FOR BANKING WITH US ! ***"<<endl;
+        }
+else
+{
+    cout<<"PIN RESET FAILED"<<endl;
+}
+        }
+
+        }
+ else{
+        cout<<"WRONG PIN! "<<endl;
+ }
+    }
+
+    }
+    else
+    if(want==5){
+        cout<<"-------- TRANSFER FUNDS -------"<<endl;
+        cout<<"ENTER THE ACCOUNT NUMBER OF THE RECEIVER"<<endl;
+        cin>>receiverAccount;
+        cout<<"CONFIRM ACCOUNT NUMBER :"<<endl;
+        cin>>confirmAccount;
+        if(receiverAccount==confirmAccount){
+
+            cout<<"ENTER AMOUNT TO TRANSFER GHS:";
+            cin >>amount;
+            cout<<"ENTER PIN TO CONFIRM >>";
+             cin>>oldPin;
+            if(oldPin==pin){
+
+                cout<<"SUCCESSFULLY SENT GHs"<<amount<<" TO "<<receiverAccount<<endl;
+                cout <<" "<<endl;
+                 cout<<"YOUR BALANCE IS GHS:"<<money-amount<<endl;
+                 cout <<" \n";
+                 cout<<"*** THANK YOU FOR BANKING WITH US ! ***"<<endl;
+                            }
+            else{
+                 cout <<" "<<endl;
+                     cout <<"!!!!!SORRRY!!!!!! "<<endl;
+                 cout <<"CHECK YOUR PIN AND RETRY AGIAN "<<endl;
+
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    else{
+        cout<<"SORRY...YOUR CREDENTIALS DON'T MATCH !!"<<endl;
+        cout<<"TRY AGAIN"<<endl;
+         cout<<"ENTER YOUR UNIQUE ID :";
+    cin>>unique_id;
+    cout<<"PLEASE ENTER YOUR PIN :";
+    cin>>pin;
+   if (unique_id==login_id && pin==loginPin){
+        cout<<"\n"<<endl;
+                cout<<"   ^^^^^^^^^ WELCOME ^^^^^^^^^^ "<<endl;
+        cout<<">>>>>>>>>>  "<<unique_id<<"  >>>>>>>>>>"<<endl;
+        cout<<"\n";
+        cout<<"WHAT WOULD YOU LIKE TO DO ?"<<endl;
+        cout<<"1. WITHDRAW"<<endl;
+          cout<<"2. CHECK YOUR BALANCE"<<endl;
+            cout<<"3. CHECK STATEMENT"<<endl;
+              cout<<"4. RESET PIN"<<endl;
+                cout<<"5. TRANSFER FUNDS"<<endl;
+                  cout<<"\n"<<endl;
+              cout<<"*PLEASE SELECT YOUR OPTION BY ENTERING THE NUMBER 1,2,3,4 or 5 "<<endl;
+              cin>>want;
+              cout<<"\n";
+     if(want==1)
+    {
+     cout<<"-----WITHDRAW------\n";
+
+
+       cout<<"HOW MUCH WOULD YOU LIKE TO WITHDRAW :"<<endl;
+       cin>>withdraw;
+        cout<<"loading...";
+          cout<<"...";
+            cout<<"SUCCESSFULLY WITHDRAWN :"<<withdraw<<endl;
+             cout<<"YOUR NEW BALANCE IS GHS:"<<money-withdraw<<endl;
+              cout<<"THANK YOU FOR BANKING WITH US !"<<endl;
+    }
+    else
+        if(want==2)
+    {
+          cout<<"-----BALANCE----"<<endl;
+         cout<<"\n"<<endl;
+          cout<<"YOUR BALANCE IS GHS:"<<money-withdraw<<endl;
+          cout<<"*** THANK YOU FOR BANKING WITH US ! ***"<<endl;
+
+    }
+    else
+        if(want==3)
+    {
+        cout<<"------- CHECK ACCOUNT STATEMENT -------- "<<endl;
+        cout<<"\n"<<endl;
+        cout<<"PLEASE ENTER YOUR EMAIL ACCOUNT ";
+        cin>>email;
+        cout<<"YOUR ACCOUNT STATEMENT HAS BEEN SENT TO YOUR EMAIL."<<endl;
+        cout<<"*** THANK YOU FOR BANKING WITH US ! ***"<<endl;
+
+    }
+    else
+        if(want==4)
+    {
+        cout<<"-------RESET PIN-------"<<endl;
+        cout<<"ENTER YOUR OLD PIN:";
+        cin>>oldPin;
+        if(oldPin==loginPin){
+            cout<<"ENTER NEW PIN :";
+            cin>>newPin;
+        cout<<"CONFIRM NEW PIN :";
+        cin>>confirmPin;
+        if(newPin == confirmPin){
+            cout<<"PIN RESET SUCCESSFUL...!"<<endl;
+            cout<<"*** THANK YOU FOR BANKING WITH US ! ***"<<endl;
+        }
+        else
+        {
+            cout<<"PIN DONT MATCH"<<endl;
+            cout<<"TRY AGIN"<<endl;
+             cout<<"ENTER NEW PIN :";
+            cin>>newPin;
+        cout<<"CONFIRM NEW PIN :";
+        cin>>confirmPin;
+        if(newPin == confirmPin){
+            cout<<"PIN RESET SUCCESSFUL...!"<<endl;
+            cout<<"*** THANK YOU FOR BANKING WITH US ! ***"<<endl;
+        }
+else
+{
+    cout<<"PIN RESET FAILED"<<endl;
+}
+        }
+
+        }
+
+    }
+
+    else
+    if(want==5){
+        cout<<"-------- TRANSFER FUNDS -------"<<endl;
+        cout<<"ENTER THE ACCOUNT NUMBER OF THE RECEIVER"<<endl;
+        cin>>receiverAccount;
+        cout<<"CONFIRM ACCOUNT NUMBER :"<<endl;
+        cin>>confirmAccount;
+        if(receiverAccount==confirmAccount){
+
+            cout<<"ENTER AMOUNT TO TRANSFER GHS:";
+            cin>>amount;
+            cout<<"ENTER PIN TO CONFIRM >> ";
+            cin>>oldPin;
+            if(oldPin==pin){
+
+                cout<<"SUCCESSFULLY SENT GHs"<<amount<<" TO "<<receiverAccount<<endl;
+                 cout <<" "<<endl;
+                 cout<<"YOUR BALANCE IS GHS:"<<money-amount<<endl;
+                  cout <<" \n";
+                 cout<<"*** THANK YOU FOR BANKING WITH US ! ***"<<endl;
+                            }
+            else{
+                 cout <<" "<<endl;
+                     cout <<"!!!!!SORRRY!!!!!! "<<endl;
+                 cout <<"CHECK YOUR PIN AND RETRY AGIAN "<<endl;
+            }
+        }
+    }
+
+    }
+    else
+
+    {
+        cout<<"TRY AGAIN IN 5mins TIME."<<endl;
+    }
+    }
+
+
+
+    return 0;
+}
